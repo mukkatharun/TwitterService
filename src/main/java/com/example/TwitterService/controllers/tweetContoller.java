@@ -12,13 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("api/message")
 public class tweetContoller {
 
     @Autowired
     instanceTwitter instanceTwitter;
-
+    
     @RequestMapping(value="/userTweets", method = RequestMethod.GET)
     public List<tweetDTO> getUserTweets() throws TwitterException {
         List<tweetDTO> tweets = new ArrayList<>();
